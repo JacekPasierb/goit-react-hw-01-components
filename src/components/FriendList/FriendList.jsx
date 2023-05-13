@@ -1,19 +1,23 @@
 import React from 'react';
 import css from './FriendList.module.css';
+import { FriendListItem } from './FriendListItem/FriendListItem';
+import PropTypes from 'prop-types';
 
 export const FriendList = ({ friends }) => {
-  console.log('po', friends);
-  return(
-  
+  return (
     <ul className={css.friendList}>
-      {friends.map(({ isOnline, avatar, name, id }) => {
-       const colorStatus =  isOnline ? 'green' : 'red';
-       return <li className={css.item} id={id}>
-          <span className={css.status} style={{ backgroundColor: colorStatus }}/>
-          <img class="avatar" src={avatar} alt="User avatar" width="48" />
-          <p className={css.name}>{name}</p>
-        </li>;
-      })}
+      {friends.map(({ isOnline, avatar, name, id }) => (
+        <FriendListItem
+          isOnline={isOnline}
+          avatar={avatar}
+          name={name}
+          key={id}
+        />
+      ))}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.array,
 };

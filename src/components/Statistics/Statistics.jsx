@@ -8,7 +8,7 @@ export const Statistics = ({ title, stats }) => (
       {title && <h2 className={css.title}>{title}</h2>}
 
       <ul className={css.statList}>
-        {stats.map(stat => {
+        {stats.map(({ label, percentage, id }) => {
           const colorRandom = {
             backgroundColor: `rgb(
                   ${Math.floor(Math.random() * 256)},
@@ -17,9 +17,9 @@ export const Statistics = ({ title, stats }) => (
                 )`,
           };
           return (
-            <li className={css.item} style={colorRandom} key={stat.id}>
-              <span className={css.label}>{stat.label}</span>
-              <span className={css.percentage}>{stat.percentage}</span>
+            <li className={css.item} style={colorRandom} key={id}>
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage}</span>
             </li>
           );
         })}
@@ -27,7 +27,6 @@ export const Statistics = ({ title, stats }) => (
     </section>
   </>
 );
-
 
 Statistics.propTypes = {
   title: PropTypes.string,
