@@ -18,8 +18,8 @@ export const Statistics = ({ title, stats }) => (
           };
           return (
             <li className={css.item} style={colorRandom} key={stat.id}>
-              <span class="label">{stat.label}</span>
-              <span class="percentage">{stat.percentage}</span>
+              <span className={css.label}>{stat.label}</span>
+              <span className={css.percentage}>{stat.percentage}</span>
             </li>
           );
         })}

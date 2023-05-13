@@ -1,3 +1,30 @@
 .friendList {
-    border: 1px solid black;
+   display: flex;
+   flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+.item {
+    min-width: 250px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px ;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(63, 63, 63, 0.63);
+    
+}
+.item:hover {
+    cursor:zoom-in;
+}
+.status {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    
+    
+}
+.name {
+    font-weight: 600;
 }
