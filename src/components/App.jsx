@@ -1,4 +1,4 @@
-import Profile from 'Profile/Profile';
+import Profile from './Profile/Profile.jsx';
 import Statistics from './Statistics/Statistics.jsx';
 import user from './Profile/user';
 import data from './Statistics/data';
